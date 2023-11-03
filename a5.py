@@ -57,8 +57,10 @@ class Board:
     def __str__(self) -> str:
         """String representation of the board"""
         row_str = ""
+        row_num = 0
         for r in self.rows:
-            row_str += f"{r}\n"
+            row_str += f"row {row_num}:{r}\n\n"
+            row_num += 0
 
         return f"num_nums_placed: {self.num_nums_placed}\nboard (rows): \n{row_str}"
 
@@ -173,6 +175,13 @@ def BFS(state: Board) -> Board:
 
 
 if __name__ == "__main__":
+    b = Board()
+    print(b)
+    b.print_pretty()
+    b.update(0, 0, 4)
+    b.print_pretty()
+
+
     # uncomment the below lines once you've implemented the board class
    
     # # CODE BELOW HERE RUNS YOUR BFS/DFS
@@ -272,7 +281,7 @@ if __name__ == "__main__":
     # remove_if_exists(b.rows[4][8], 1)
     # remove_if_exists(b.rows[4][8], 2)
     # remove_if_exists(b.rows[4][8], 3)
-    # remove_if_exists(b.rows[4][8], 4)
+    # remove_if_exists(b.rows[4][8], 4) 
     # remove_if_exists(b.rows[6][7], 2)
     # remove_if_exists(b.rows[6][7], 3)
     # remove_if_exists(b.rows[6][7], 5)
